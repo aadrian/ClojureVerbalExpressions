@@ -14,6 +14,10 @@ pom.xml.asc
 # Clojure CLI
 .cpcache/
 
+# ClojureScript
+/out/
+.cljs_node_repl/
+
 # REPL
 .nrepl-port
 .nrepl-history

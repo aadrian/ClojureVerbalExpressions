@@ -29,8 +29,9 @@
     (is (true? (verex/match v "text  ")))))
 
 (deftest should-match-end-of-line
-  (let [v (-> verex/VerEx (verex/start-of-line) (verex/end-of-line))]
-    (is (false? (verex/match v "")))))
+  (let [v (-> verex/VerEx (verex/find "a") (verex/end-of-line))]
+    (is (true? (verex/match v "ba")))
+    (is (false? (verex/match v "ab")))))
 
 (deftest matches-anything
   (let [v (-> verex/VerEx (verex/start-of-line) (verex/anything) (verex/end-of-line))]
